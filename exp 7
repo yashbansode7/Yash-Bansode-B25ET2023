@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class String
+{
+    string collegeName;
+
+public:
+
+    // Parameterized constructor
+    String(string name)
+    {
+        collegeName = name;
+    }
+
+    // Function to display college name
+    void display()
+    {
+        cout << "College Name: " << collegeName << endl;
+    }
+
+    // Destructor
+    ~String()
+    {
+        cout << "Destructor called." << endl;
+    }
+};
+
+int main()
+{
+    // Create object and pass college name to parameterized constructor
+    String s("MMCOE College");
+
+    // Display college name
+    s.display();
+
+    return 0;
+}
