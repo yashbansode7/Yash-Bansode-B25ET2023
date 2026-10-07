@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Function with one parameter
+void employee(int id)
+{
+    cout << "Employee ID: " << id << endl;
+}
+
+// Function with two parameters
+void employee(int id, string name)
+{
+    cout << "Employee ID: " << id << endl;
+    cout << "Employee Name: " << name << endl;
+}
+
+// Function with three parameters
+void employee(int id, string name, float salary)
+{
+    cout << "Employee ID: " << id << endl;
+    cout << "Employee Name: " << name << endl;
+    cout << "Employee Salary: " << salary << endl;
+}
+
+int main()
+{
+    // Calling employee() with one argument
+    employee(101);
+
+    cout << endl;
+
+    // Calling employee() with two arguments
+    employee(102, "Rahul");
+
+    cout << endl;
+
+    // Calling employee() with three arguments
+    employee(103, "Priya", 45000.50);
+
+    return 0;
+}
