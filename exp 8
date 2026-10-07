@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+// Base class for employee basic information
+class Employee
+{
+protected:
+    string name;
+    int age;
+
+public:
+    // Function to accept employee information
+    void getEmployee()
+    {
+        cout << "Enter Employee Name: ";
+        cin >> name;
+
+        cout << "Enter Employee Age: ";
+        cin >> age;
+    }
+};
+
+// Base class for retirement information
+class Retirement
+{
+protected:
+    int retirementAge;
+
+public:
+    // Function to accept retirement age
+    void getRetirement()
+    {
+        cout << "Enter Retirement Age: ";
+        cin >> retirementAge;
+    }
+};
+
+// Derived class using multiple inheritance
+class EmployeeDetails : public Employee, public Retirement
+{
+public:
+    // Function to calculate remaining years
+    void calculate()
+    {
+        int remainingYears = retirementAge - age;
+
+        cout << "\nEmployee Name: " << name << endl;
+        cout << "Current Age: " << age << endl;
+        cout << "Retirement Age: " << retirementAge << endl;
+        cout << "Remaining Years Until Retirement: "
+             << remainingYears << endl;
+    }
+};
+
+int main()
+{
+    EmployeeDetails e;
+
+    // Accept employee basic information
+    e.getEmployee();
+
+    // Accept retirement information
+    e.getRetirement();
+
+    // Calculate remaining years
+    e.calculate();
+
+    return 0;
+}
