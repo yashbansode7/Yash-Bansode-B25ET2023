@@ -1,0 +1,65 @@
+#include <iostream>     // Header file for input and output
+using namespace std;    // Use standard namespace
+
+// Base class
+class Delivery
+{
+public:
+
+    // Virtual function for calculating delivery charges
+    virtual void calculateCharges()
+    {
+        cout << "Delivery charges are calculated." << endl;
+    }
+};
+
+// Derived class for Home Delivery
+class HomeDelivery : public Delivery
+{
+public:
+
+    // Override calculateCharges() for Home Delivery
+    void calculateCharges() override
+    {
+        cout << "Home Delivery Charges: Rs. 100" << endl;
+    }
+};
+
+// Derived class for Store Pickup
+class StorePickup : public Delivery
+{
+public:
+
+    // Override calculateCharges() for Store Pickup
+    void calculateCharges() override
+    {
+        cout << "Store Pickup Charges: Rs. 50" << endl;
+    }
+};
+
+// Main function
+int main()
+{
+    // Create objects of derived classes
+    HomeDelivery home;
+    StorePickup store;
+
+    // Create a base class pointer
+    Delivery *d;
+
+    // Point base class pointer to HomeDelivery object
+    d = &home;
+
+    // Calls HomeDelivery's calculateCharges()
+    // because the function is virtual
+    d->calculateCharges();
+
+    // Point base class pointer to StorePickup object
+    d = &store;
+
+    // Calls StorePickup's calculateCharges()
+    d->calculateCharges();
+
+    // End of program
+    return 0;
+}
