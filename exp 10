@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    float num1, num2;  // Declare two floating-point numbers
+
+    // Get input from the user
+    cout << "Enter two floating-point numbers: ";
+    cin >> num1 >> num2;
+
+    try {
+        // Check whether the divisor is zero
+        if (num2 == 0) {
+            throw "Error: Division by zero is not allowed!";
+        }
+
+        // Perform division if the divisor is not zero
+        cout << "Result = " << num1 / num2 << endl;
+    }
+    catch (const char* message) {
+        // Handle the exception and display the error message
+        cout << message << endl;
+    }
+
+    return 0;  // End the program
+}
