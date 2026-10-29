@@ -1,0 +1,48 @@
+#include <iostream>
+using namespace std;
+
+// Function Template
+template <class T>
+T findMax(T a, T b)
+{
+    return (a > b) ? a : b;
+}
+
+// Class Template
+template <class T>
+class Demo
+{
+    T a, b;
+
+public:
+    Demo(T x, T y)
+    {
+        a = x;
+        b = y;
+    }
+
+    void display()
+    {
+        cout << "First value: " << a << endl;
+        cout << "Second value: " << b << endl;
+    }
+};
+
+int main()
+{
+    // Function Template
+    cout << "Maximum of integers: " << findMax(10, 20) << endl;
+    cout << "Maximum of floats: " << findMax(5.5, 2.5) << endl;
+
+    // Class Template
+    Demo<int> d1(10, 20);
+    Demo<float> d2(3.5, 7.5);
+
+    cout << "\nInteger Class Template:" << endl;
+    d1.display();
+
+    cout << "\nFloat Class Template:" << endl;
+    d2.display();
+
+    return 0;
+}
