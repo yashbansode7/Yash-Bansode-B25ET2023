@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+namespace First
+{
+    int a = 10;
+
+    void display()
+    {
+        cout << "This is First namespace." << endl;
+        cout << "Value of a = " << a << endl;
+    }
+}
+
+namespace Second
+{
+    int a = 20;
+
+    void display()
+    {
+        cout << "This is Second namespace." << endl;
+        cout << "Value of a = " << a << endl;
+    }
+}
+
+int main()
+{
+    First::display();
+    Second::display();
+
+    cout << "Value from First namespace: " << First::a << endl;
+    cout << "Value from Second namespace: " << Second::a << endl;
+
+    return 0;
+}
